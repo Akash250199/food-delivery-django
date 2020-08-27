@@ -4,3 +4,5 @@ from django.http import HttpResponse
 
 def contact(request):
     return render(request, 'mainapp/contact.html')
+def developer(request):
+    return render(request,'mainapp/developer.html')
