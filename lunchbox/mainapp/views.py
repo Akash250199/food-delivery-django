@@ -12,3 +12,5 @@ def about(request):
     return render(request,'mainapp/about.html')
 def menu(request):
     return render(request,'mainapp/menu.html')
+def blog(request):
+    return render(request,'mainapp/blog.html')
