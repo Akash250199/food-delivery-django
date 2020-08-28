@@ -16,3 +16,5 @@ def menu(request):
     return render(request,'mainapp/menu.html')
 def blog(request):
     return render(request,'mainapp/blog.html')
+def blogs(request):
+    return render(request,'mainapp/blog-single.html')
