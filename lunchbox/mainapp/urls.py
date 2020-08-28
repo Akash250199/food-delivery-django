@@ -4,13 +4,15 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index,name='index'),
-    path('dev',views.developer,name='developer'),
-    path('res',views.reservation,name='reservation'),
-    path('abt',views.about,name='aboutus'),
-    path('men',views.menu,name='menu'),
-    path('blg',views.blog,name='blog'),
-    path('blgs',views.blogs,name='blogs'),
-    path('con',views.contact,name='contact'),
+    path('', views.index,name='homepage'),
+    path('about/',views.about,name='aboutus'),
+    path('menu/',views.menu,name='menu'),
+    path('reserve/',views.reservation,name='reservation'),
+    path('blog/',views.blog,name='blog'),
+    path('blogs/',views.blogs,name='blogs'),
+    path('contact/',views.contact,name='contactus'),
+    path('developer/',views.developer,name='developedby'),
+    
+ 
    
 ]
