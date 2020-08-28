@@ -8,3 +8,5 @@ def developer(request):
     return render(request,'mainapp/developer.html')
 def reservation(request):
     return render(request,'mainapp/reservation.html')
+def about(request):
+    return render(request,'mainapp/about.html')
