@@ -44,39 +44,39 @@
 	
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">LunchBox</a>
+			<a class="navbar-brand" href="{% url 'home' %}">LunchBox</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                 <li class="nav-item"><a href="index.html" class="nav-link"><b>Home</b></a></li>
-                 <li class="nav-item"><a href="about.html" class="nav-link"><b>About</b></a></li>
+                 <li class="nav-item"><a href="{% url 'home' %}" class="nav-link"><b>Home</b></a></li>
+                 <li class="nav-item"><a href="/about" class="nav-link"><b>About</b></a></li>
                  <li class="nav-item"><a href="chef.html" class="nav-link"><b>Chef</b></a></li>
-                 <li class="nav-item"><a href="menu.html" class="nav-link"><b>Menu</b></a></li>
-                 <li class="nav-item active"><a href="reservation.html" class="nav-link"><b>Reservation</b></a></li>
-                 <li class="nav-item dropdown"><a href="blog.html" class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b>Blog</b></a>
+                 <li class="nav-item"><a href="/menu" class="nav-link"><b>Menu</b></a></li>
+                 <li class="nav-item active"><a href=" " class="nav-link"><b>Reservation</b></a></li>
+                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b>Blog</b></a>
                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <a class="dropdown-item" href="blog.html"><b>Blog</b></a>
-                     <a class="dropdown-item" href="blog-single.html"><b>Blog-Single</b></a>
+                     <a class="dropdown-item" href="/blog"><b>Blog</b></a>
+                     <a class="dropdown-item" href="/blog"><b>Blog-Single</b></a>
                    </div>
                  </li>
-                 <li class="nav-item"><a href="contact.html" class="nav-link"><b>Contact</b></a></li>
-                 <li class="nav-item"><a href="developer.html" class="nav-link"><b>Developed By</b></a></li>
+                 <li class="nav-item"><a href="/contact" class="nav-link"><b>Contact</b></a></li>
+                 <li class="nav-item"><a href="/developer" class="nav-link"><b>Developed By</b></a></li>
                </ul>
             </div>
 		</div>
 	</nav>
 	<!-- END nav -->
 	
-	<section class="hero-wrap hero-wrap-2" style="background-image: url('static/mainapp/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('/static/mainapp/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-end justify-content-center">
 				<div class="col-md-9 ftco-animate text-center mb-5">
 					<h1 class="mb-2 bread">Book A Table Now</h1>
-					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Reservation <i class="fa fa-chevron-right"></i></span></p>
+					<p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Reservation <i class="fa fa-chevron-right"></i></span></p>
 				</div>
 			</div>
 		</div>
@@ -153,8 +153,8 @@
 		<div class="container">
 			<div class="row d-flex">
 				<div class="col-md-6 d-flex">
-					<div class="img img-2 w-100 mr-md-2" style="background-image: url(static/mainapp/images/bg_6.jpg);"></div>
-					<div class="img img-2 w-100 ml-md-2" style="background-image: url(static/mainapp/images/bg_4.jpg);"></div>
+					<div class="img img-2 w-100 mr-md-2" style="background-image: url(/static/mainapp/images/bg_6.jpg);"></div>
+					<div class="img img-2 w-100 ml-md-2" style="background-image: url(/static/mainapp/images/bg_4.jpg);"></div>
 				</div>
 				<div class="col-md-6 ftco-animate makereservation p-4 p-md-5">
 					<div class="heading-section ftco-animate mb-5">
@@ -202,19 +202,19 @@
 					<div class="ftco-footer-widget mb-4">
 						<h2 class="ftco-heading-2">Instagram</h2>
 						<div class="thumb d-sm-flex">
-							<a href="#" class="thumb-menu img" style="background-image: url(static/mainapp/images/insta-1.jpg);">
+							<a href="#" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-1.jpg);">
 							</a>
-							<a href="#" class="thumb-menu img" style="background-image: url(static/mainapp/images/insta-2.jpg);">
+							<a href="#" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-2.jpg);">
 							</a>
-							<a href="#" class="thumb-menu img" style="background-image: url(static/mainapp/images/insta-3.jpg);">
+							<a href="#" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-3.jpg);">
 							</a>
 						</div>
 						<div class="thumb d-flex">
-							<a href="#" class="thumb-menu img" style="background-image: url(static/mainapp/images/insta-4.jpg);">
+							<a href="#" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-4.jpg);">
 							</a>
-							<a href="#" class="thumb-menu img" style="background-image: url(static/mainapp/images/insta-5.jpg);">
+							<a href="#" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-5.jpg);">
 							</a>
-							<a href="#" class="thumb-menu img" style="background-image: url(static/mainapp/images/insta-6.jpg);">
+							<a href="#" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-6.jpg);">
 							</a>
 						</div>
 					</div>

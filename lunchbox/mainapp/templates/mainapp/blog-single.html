@@ -53,31 +53,31 @@
 
    <div class="collapse navbar-collapse" id="ftco-nav">
      <ul class="navbar-nav ml-auto">
-      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
       <li class="nav-item"><a href="chef.html" class="nav-link">Chef</a></li>
-      <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
-      <li class="nav-item"><a href="reservation.html" class="nav-link">Reservation</a></li>
-      <li class="nav-item dropdown active"><a href="blog.html" class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog-Single</a>
+      <li class="nav-item"><a href="/menu" class="nav-link">Menu</a></li>
+      <li class="nav-item"><a href="/reserve" class="nav-link">Reservation</a></li>
+      <li class="nav-item dropdown active"><a href=" " class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog-Single</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="blog.html">Blog</a>
+          <a class="dropdown-item" href="/blog">Blog</a>
         </div>
       </li>
-      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-      <li class="nav-item"><a href="developer.html" class="nav-link">Developed By</a></li>
+      <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+      <li class="nav-item"><a href="/developer" class="nav-link">Developed By</a></li>
     </ul>
   </div>
 </div>
 </nav>
 <!-- END nav -->
 
-<section class="hero-wrap hero-wrap-2" style="background-image: url('static/mainapp/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/static/mainapp/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
   <div class="overlay"></div>
   <div class="container">
     <div class="row no-gutters slider-text align-items-end justify-content-center">
       <div class="col-md-9 ftco-animate text-center mb-5">
         <h1 class="mb-2 bread">Blog Single</h1>
-        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a href="blog.html">Blog <i class="fa fa-chevron-right"></i></a></span> <span>Blog Single <i class="fa fa-chevron-right"></i></span></p>
+        <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Home <i class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a href="/blog">Blog <i class="fa fa-chevron-right"></i></a></span> <span>Blog Single <i class="fa fa-chevron-right"></i></span></p>
       </div>
     </div>
   </div>
@@ -90,7 +90,7 @@
       <h2 class="mb-3">#1. Creative WordPress Themes</h2>
       <p>In the time of the error to the exercise of, this receives been blinded by the hardships of the whole of things, his way? Or, in the. Have to exercise the duties of, and indeed the times of our ancestors, from the master builder of pleasure or of pain. The error of the pleasure of the pain, is full of troubles worthy of hatred, hates, as it were proved guilty according to repel those who performed the rejecting some of them fall, but the consequences of which he is not here? Debts advantage, or, to obtain.</p>
       <p>
-        <img src="static/mainapp/images/image_2.jpg" alt="" class="img-fluid">
+        <img src="/static/mainapp/images/image_2.jpg" alt="" class="img-fluid">
       </p>
       <p>Any one would be some kind of a distinction of the flight, was selected for, indeed, of the truth, rejecting some. Nothing will unfold in the means, is that God be. Hence it is, or is not bound to time, unless through the fault of the truth, there is no pleasure greater than the duties of a man whom there was a consectetur suscipit scornfully rejects or by an enduring, freedom. Error, he will, in other instances. Deserted the general's some less, and him; for he will come in, affair of that sort of higher degree.</p>
       <p>A man hates his pleasures, the result will have no pains or nothing to do with these labors, by which He wills him, indeed, a resultant advantage of things! Because the flight of the latter is bound, unless he or she is of the suffering, the consequences of, this, indeed, of the truth and will unfold in something similar has been solved the pleasure of the advantage of his free? Cajolements great pleasures to open it. We also discovered criticized for their careful these welcome them.</p>
@@ -106,7 +106,7 @@
       
       <div class="about-author d-flex p-4 bg-light">
         <div class="bio mr-5">
-          <img src="static/mainapp/images/blog-12.jpg" alt="Image placeholder" class="img-fluid mb-4">
+          <img src="/static/mainapp/images/blog-12.jpg" alt="Image placeholder" class="img-fluid mb-4">
         </div>
         <div class="desc">
           <h3>kaustav Hazra</h3>
@@ -120,7 +120,7 @@
         <ul class="comment-list">
           <li class="comment">
             <div class="vcard bio">
-              <img src="static/mainapp/images/blog-9.jpg" alt="Image placeholder">
+              <img src="/static/mainapp/images/blog-9.jpg" alt="Image placeholder">
             </div>
             <div class="comment-body">
               <h3>Shakil Ahmed</h3>
@@ -132,7 +132,7 @@
 
           <li class="comment">
             <div class="vcard bio">
-              <img src="static/mainapp/images/blog-10.jpg" alt="Image placeholder">
+              <img src="/static/mainapp/images/blog-10.jpg" alt="Image placeholder">
             </div>
             <div class="comment-body">
               <h3>Rajarshi Bhattacharjee</h3>
@@ -144,7 +144,7 @@
             <ul class="children">
               <li class="comment">
                 <div class="vcard bio">
-                  <img src="static/mainapp/images/blog-11.jpg" alt="Image placeholder">
+                  <img src="/static/mainapp/images/blog-11.jpg" alt="Image placeholder">
                 </div>
                 <div class="comment-body">
                   <h3>Ritwik Dutta</h3>
@@ -157,7 +157,7 @@
                 <ul class="children">
                   <li class="comment">
                     <div class="vcard bio">
-                      <img src="static/mainapp/images/blog-1.jpg" alt="Image placeholder">
+                      <img src="/static/mainapp/images/blog-1.jpg" alt="Image placeholder">
                     </div>
                     <div class="comment-body">
                       <h3>Neloy paul</h3>
@@ -169,7 +169,7 @@
                     <ul class="children">
                       <li class="comment">
                         <div class="vcard bio">
-                          <img src="static/mainapp/images/blog-2.jpg" alt="Image placeholder">
+                          <img src="/static/mainapp/images/blog-2.jpg" alt="Image placeholder">
                         </div>
                         <div class="comment-body">
                           <h3>Aniket Dey</h3>
@@ -187,7 +187,7 @@
 
           <li class="comment">
             <div class="vcard bio">
-              <img src="static/mainapp/images/blog-3.jpg" alt="Image placeholder">
+              <img src="/static/mainapp/images/blog-3.jpg" alt="Image placeholder">
             </div>
             <div class="comment-body">
               <h3>Atri Ghosh</h3>
@@ -353,19 +353,19 @@
        <div class="ftco-footer-widget mb-4">
         <h2 class="ftco-heading-2">Instagram</h2>
         <div class="thumb d-sm-flex">
-          <a href="#" class="thumb-menu img" style="background-image: url(static/mainapp/images/insta-1.jpg);">
+          <a href="#" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-1.jpg);">
           </a>
-          <a href="#" class="thumb-menu img" style="background-image: url(static/mainapp/images/insta-2.jpg);">
+          <a href="#" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-2.jpg);">
           </a>
-          <a href="#" class="thumb-menu img" style="background-image: url(static/mainapp/images/insta-3.jpg);">
+          <a href="#" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-3.jpg);">
           </a>
         </div>
         <div class="thumb d-flex">
-          <a href="#" class="thumb-menu img" style="background-image: url(static/mainapp/images/insta-4.jpg);">
+          <a href="#" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-4.jpg);">
           </a>
-          <a href="#" class="thumb-menu img" style="background-image: url(static/mainapp/images/insta-5.jpg);">
+          <a href="#" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-5.jpg);">
           </a>
-          <a href="#" class="thumb-menu img" style="background-image: url(static/mainapp/images/insta-6.jpg);">
+          <a href="#" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-6.jpg);">
           </a>
         </div>
       </div>
