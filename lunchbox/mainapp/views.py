@@ -6,6 +6,8 @@ def index(request):
     return render(request, 'mainapp/index.html')
 def about(request):
     return render(request,'mainapp/about.html')
+def chef(request):
+    return render(request,'mainapp/chef.html')
 def menu(request):
     return render(request,'mainapp/menu.html')
 def reservation(request):
