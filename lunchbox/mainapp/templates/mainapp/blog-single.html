@@ -234,12 +234,12 @@
       <div class="sidebar-box ftco-animate">
        <h3>Category</h3>
        <ul class="categories">
-        <li><a href="#">Breakfast <span>(6)</span></a></li>
-        <li><a href="#">Lunch <span>(8)</span></a></li>
-        <li><a href="#">Dinner <span>(2)</span></a></li>
-        <li><a href="#">Desserts <span>(2)</span></a></li>
-        <li><a href="#">Drinks <span>(2)</span></a></li>
-        <li><a href="#">Wine <span>(2)</span></a></li>
+        <li><a href="/menu#breakfast">Breakfast <span>(6)</span></a></li>
+        <li><a href="/menu#lunch">Lunch <span>(8)</span></a></li>
+        <li><a href="/menu#dinner">Dinner <span>(2)</span></a></li>
+        <li><a href="/menu#dessert">Desserts <span>(2)</span></a></li>
+        <li><a href="/menu#drinks">Drinks <span>(2)</span></a></li>
+        <li><a href="/menu#winecard">Wine <span>(2)</span></a></li>
       </ul>
     </div>
 
@@ -283,13 +283,12 @@
     <div class="sidebar-box ftco-animate">
       <h3>Tag Cloud</h3>
       <ul class="tagcloud m-0 p-0">
-        <a href="#" class="tag-cloud-link">Dish</a>
-        <a href="#" class="tag-cloud-link">Food</a>
-        <a href="#" class="tag-cloud-link">Lunch</a>
-        <a href="#" class="tag-cloud-link">Menu</a>
-        <a href="#" class="tag-cloud-link">Dessert</a>
-        <a href="#" class="tag-cloud-link">Drinks</a>
-        <a href="#" class="tag-cloud-link">Sweets</a>
+        <a href="{% url 'home' %}#food" class="tag-cloud-link">Food</a>
+        <a href="/menu#lunch" class="tag-cloud-link">Lunch</a>
+        <a href="/menu#ourmenu" class="tag-cloud-link">Menu</a>
+        <a href="/menu#dessert" class="tag-cloud-link">Dessert</a>
+        <a href="/menu#drinks" class="tag-cloud-link">Drinks</a>
+        
       </ul>
     </div>
 
