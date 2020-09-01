@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from mainapp.models import booking
-from mainapp.forms import reservation
+from mainapp.forms import reserv
 # Create your views here.
 
 def index(request):
@@ -13,8 +13,8 @@ def chef(request):
 def menu(request):
     return render(request,'mainapp/menu.html')
 def reservation(request):
-    if request.method=='POST':
-        a=reservation(request.POST)
+    if request.method == 'POST':
+        a=reserv(request.POST)
         if a.is_valid():
             try:
                 a.save()
