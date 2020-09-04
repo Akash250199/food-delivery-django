@@ -19,9 +19,10 @@ def reservation(request):
             try:
                 a.save()
                 print('Booking conirmed')
-                return redirect('/')
+                return redirect('home')
             except:
                 pass
+		
         
     else:
         return render(request,'mainapp/reservation.html')
