@@ -19,7 +19,7 @@ def reservation(request):
             try:
                 a.save()
                 print('Booking conirmed')
-                return redirect('home')
+                return redirect('/')
             except:
                 pass
 		
