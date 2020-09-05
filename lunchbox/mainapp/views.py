@@ -21,9 +21,7 @@ def reservation(request):
                 print('Booking conirmed')
                 return redirect('/')
             except:
-                pass
-		
-        
+                pass    
     else:
         return render(request,'mainapp/reservation.html')
 def blog(request):
