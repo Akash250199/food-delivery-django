@@ -9,3 +9,12 @@ class booking(models.Model):
     guest = models.IntegerField()
     date = models.DateField()
     time = models.TimeField()
+
+
+"""class Reservation(models.Model):
+    name = models.CharField(max_length=250)
+    email = models.CharField(max_length=100)
+    phno = models.CharField(max_length=13)
+    guest = models.PositiveIntegerField()
+    date = models.DateField()
+    time = models.TimeField()"""
