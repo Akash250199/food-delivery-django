@@ -13,7 +13,7 @@ urlpatterns = [
     path('blogs/',views.blogs,name='blogs'),
     path('contact/',views.contact,name='contactus'),
     path('developer/',views.developer,name='developedby'),
-    path('signup',views.handlesignup,name='signup'),
-    path('login',views.handlelogin,name='login'),
+    path('signup/',views.handlesignup,name='signup'),
+    path('login/',views.handlelogin,name='login'),
     path('logout/',views.handlelogout,name='logout'),
 ]
