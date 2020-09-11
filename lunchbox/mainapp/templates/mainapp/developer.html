@@ -36,7 +36,7 @@
 					<p class="mb-0 phone"><span class="mailus">Phone no:</span> <a href="tel://9876543219">+91-9876543219</a> or <span class="mailus">Email us:</span> <a href="mailto:lunchbox.official@gmail.com">lunchbox.official@gmail.com</a></p>
 				</div>
 				<div class="col-12 col-md d-flex justify-content-md-end">
-					<p class="mb-0">Mon - Fri / 9:00-24:00, Sat / 10:00-24:00 Sun / Closed</p>
+					<p class="mb-0">Mon - Fri / 9:00-00:00, Sat / 10:00-00:00 Sun / Closed</p>
 				</div>
 			</div>
 		</div>
@@ -48,6 +48,18 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
+			<ul class="navbar-nav">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<b>welcome
+							{{request.user}}</b>
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="/logout"><b>Logout</b></a>
+					</div>
+					
+				  </li>
+			</ul>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
