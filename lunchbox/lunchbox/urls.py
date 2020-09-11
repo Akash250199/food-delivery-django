@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+admin.site.site_header= "LunchBox Admin"
+admin.site.site_title="LunchBox Admin Panel"
+admin.site.index_title="Welcome to LunchBox Admin Panel"
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mainapp.urls')),
