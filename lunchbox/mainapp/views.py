@@ -3,9 +3,8 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
-from mainapp.models import Contact
+from mainapp.models import Contact,Reservation
 import requests
-
 import json
 # Create your views here.
 
@@ -18,6 +17,36 @@ def chef(request):
 def menu(request):
     return render(request,'mainapp/menu.html')
 def reservation(request):
+    if request.method=='POST':
+        name=request.POST['name']
+        email=request.POST['email']
+        phone=request.POST['phone']
+        date=request.POST['date']
+        time=request.POST['time']
+        guest=request.POST['guest']
+
+
+        if len(name)<3 or len(email)<3 or len(phone)<10 or len(guest)<1:
+            messages.error(request,"Make sure the information is complete and valid!")
+            return redirect('reservation')
+
+        
+        
+        
+
+        if any(not name.isalpha() and not name.isspace() for name in name): 
+            messages.error(request,"Please type Valid Name!")
+            return redirect('reservation')
+        if not phone.isdigit():
+            messages.error(request,"Please type Phone Number!")
+            return redirect('reservation')
+        else:
+
+            reservation=Reservation(name=name,email=email,phone=phone,date=date,time=time,guest=guest)
+            reservation.save()
+            messages.success(request,"Booking Confirmed")
+            return redirect('reservation')
+
     return render(request,'mainapp/reservation.html')
 def blog(request):
     return render(request,'mainapp/blog.html')
@@ -42,18 +71,26 @@ def contact(request):
         response=json.loads(r.text)
         verify= response['success']
         if verify:
+            if any(not name.isalpha() and not name.isspace() for name in name):
+                messages.error(request,"Please type Valid Name!")               
+                return redirect('contactus')
+
+            if not phone.isdigit():
+                messages.error(request,"Please type Phone Number!")
+                return redirect('contactus')
+
             if len(name)<3 or len(email)<3 or len(phone)<10 or len(subject)<4 or len(desc)<5:
                 messages.error(request,"Make sure the information is complete and valid!")
-                #return redirect('contactus')
+                return redirect('contactus')
 
             else:
                 contact=Contact(name=name,email=email,phone=phone,subject=subject,desc=desc)
                 contact.save()
                 messages.success(request,"Your Message has been Successfully sent")
-                #return redirect('contactus')
+                return redirect('contactus')
         else:
-            messages.error(request,"Error sending message. Make sure the information you typed is complete and valid!")
-            #return redirect('contactus') 
+            messages.error(request,"Error sending message, Invalid Credentials/captcha")
+            return redirect('contactus') 
 
     return render(request, 'mainapp/contact.html')
 

@@ -12,3 +12,15 @@ class Contact(models.Model):
     
     def __str__(self):
         return 'Message from: ' + self.name
+
+class Reservation(models.Model):
+    name=models.CharField(max_length=50)
+    email=models.EmailField()
+    phone=models.CharField(max_length=13)
+    date=models.DateField() 
+    time=models.TimeField()
+    guest=models.PositiveIntegerField()
+
+    def __str__(self):
+        return 'Message from: ' + self.name
+
