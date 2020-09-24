@@ -6,6 +6,11 @@ from django.contrib import messages
 from mainapp.models import Contact,Reservation
 import requests
 import json
+
+from django.conf import settings 
+from django.core.mail import send_mail
+
+
 # Create your views here.
 
 def index(request):
@@ -30,10 +35,6 @@ def reservation(request):
             messages.error(request,"Make sure the information is complete and valid!")
             return redirect('reservation')
 
-        
-        
-        
-
         if any(not name.isalpha() and not name.isspace() for name in name): 
             messages.error(request,"Please type Valid Name!")
             return redirect('reservation')
@@ -44,7 +45,13 @@ def reservation(request):
 
             reservation=Reservation(name=name,email=email,phone=phone,date=date,time=time,guest=guest)
             reservation.save()
-            messages.success(request,"Booking Confirmed")
+            subject = 'Booking Confirmed !! LunchBox'
+            message = f'Hi {name}, Your Table Booking for {guest} persons is Confirmed at {time} on {date} .\n\nThank you for Choosing Us. '
+            email_from = settings.EMAIL_HOST_USER 
+            recipient_list = [email] 
+            send_mail( subject, message, email_from, recipient_list )
+
+            messages.success(request,"Booking Confirmed and Your Details has been Sent Via Email Successfully")
             return redirect('reservation')
 
     return render(request,'mainapp/reservation.html')
@@ -86,6 +93,12 @@ def contact(request):
             else:
                 contact=Contact(name=name,email=email,phone=phone,subject=subject,desc=desc)
                 contact.save()
+                subject = 'Message Sent Successfully !! LunchBox'
+                message = f'Hi {name}, We have received Your message and will get back to you Soon.'
+                email_from = settings.EMAIL_HOST_USER 
+                recipient_list = [email] 
+                send_mail( subject, message, email_from, recipient_list )
+
                 messages.success(request,"Your Message has been Successfully sent")
                 return redirect('contactus')
         else:
@@ -138,7 +151,14 @@ def handlesignup(request):
                 if verify:
                     myuser=User.objects.create_user(username=username,email=email,password=pass1,first_name=fname,last_name=lname)
                     myuser.save()
-                    messages.success(request,"Successfully Created")
+
+                    #email
+                    subject = 'Sign Up Successful !! LunchBox'
+                    message = f'Hi {fname}, Thank you for registering in LunchBox.\n\nNow Login using this Username:- {username} and Password:- {pass1}'
+                    email_from = settings.EMAIL_HOST_USER 
+                    recipient_list = [email] 
+                    send_mail( subject, message, email_from, recipient_list )
+                    messages.success(request,"Your Credentials sent via Email and Account Succesfully Created")
                     return redirect('home')
                 else:
                     messages.error(request,"Error creating account! Make sure that you have entered correct information")
@@ -170,6 +190,11 @@ def handlelogin(request):
             verify= response['success']
             if verify:
                 login(request,user)
+                subject = 'Successfully Logged In !! LunchBox'
+                message = f'Hi {user.first_name}, Thank you for join with LunchBox.\n\nNow You Can Access our Website. '
+                email_from = settings.EMAIL_HOST_USER 
+                recipient_list = [user.email] 
+                send_mail( subject, message, email_from, recipient_list )
                 messages.success(request,"Successfully Logged In")
                 return redirect('home')
             else: 

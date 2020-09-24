@@ -126,3 +126,10 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'lunch.boxrestora@gmail.com'
+EMAIL_HOST_PASSWORD ='lunchbox250199'
+
