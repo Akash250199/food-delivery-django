@@ -723,9 +723,14 @@
 						<h2 class="ftco-heading-2">LunchBox</h2>
 						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p>
 						<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+							{% if user.is_authenticated %}
 							<li class="ftco-animate"><a href="https://www.facebook.com/LunchBoxOttawa/"><span><i class="fab fa-facebook"></i></span></a></li>
 							<li class="ftco-animate"><a href="https://www.instagram.com/lunchboxottawa/"><span><i class="fab fa-instagram"></i></span></a></li>	
-						  </ul>
+							{% else %}
+							<li class="ftco-animate"><a href="/signup"><span><i class="fab fa-facebook"></i></span></a></li>
+							<li class="ftco-animate"><a href="/signup"><span><i class="fab fa-instagram"></i></span></a></li>	
+							{% endif %}
+						</ul>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-3">
@@ -746,23 +751,40 @@
 					<div class="ftco-footer-widget mb-4">
 						<h2 class="ftco-heading-2">Instagram</h2>
 						<div class="thumb d-sm-flex">
+							{% if user.is_authenticated %}
 							<a href="https://drive.google.com/file/d/1zyFmZR5KDbyP_fv7VPDGHe_pBYfKEtF6/view?usp=sharing" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-1.jpg);">
 							</a>
 							<a href="https://drive.google.com/file/d/1HX8Vun4v9Coj5vwzJICtkrswO4NBp-mD/view?usp=sharing" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-2.jpg);">
 							</a>
 							<a href="https://drive.google.com/file/d/1gUN3M-1EYicP82St5f1ThRuvTG_qQNpi/view?usp=sharing" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-3.jpg);">
 							</a>
+							{% else %}
+							<a href="/signup" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-1.jpg);">
+							</a>
+							<a href="/signup" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-2.jpg);">
+							</a>
+							<a href="/signup" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-3.jpg);">
+							</a>
+							{% endif %}
 						</div>
 						<div class="thumb d-flex">
+							{% if user.is_authenticated %}
 							<a href="https://drive.google.com/file/d/1RHwvG-NnYxvH5io23SkxmqowFd3NLeWw/view?usp=sharing" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-4.jpg);">
 							</a>
 							<a href="https://drive.google.com/file/d/1dZdnuv8NeA9MJdISKirPFNvN83Z_F5A2/view?usp=sharing" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-5.jpg);">
 							</a>
 							<a href="https://drive.google.com/file/d/126vUOA3aFqUMqXxnp4Yf4BaCS3MqTxfA/view?usp=sharing" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-6.jpg);">
 							</a>
+							{% else %}
+							<a href="/signup" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-4.jpg);">
+							</a>
+							<a href="/signup" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-5.jpg);">
+							</a>
+							<a href="/signup" class="thumb-menu img" style="background-image: url(/static/mainapp/images/insta-6.jpg);">
+							</a>
+							{% endif %}
 						</div>
 					</div>
-				</div>
 				</div>
 				<div class="col-md-6 col-lg-3">
 					<div class="ftco-footer-widget mb-4">
@@ -777,7 +799,7 @@
 			<div class="row no-gutters">
 				<div class="col-md-12 text-center">
 
-					
+
 					</div>
 				</div>
 			</div>
