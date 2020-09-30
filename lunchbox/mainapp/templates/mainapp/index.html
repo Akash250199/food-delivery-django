@@ -25,9 +25,10 @@
 	
 	<link rel="stylesheet" href="{% static 'mainapp/css/flaticon.css' %}">
 	<link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}">
+	
+	
 </head>
 <body>
-
 	<div class="wrap">
 		<div class="container">
 			<div class="row justify-content-between">
@@ -69,9 +70,10 @@
 				Login
 			  </button>
 			  <br> 
-			<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#signupModal">
+			<button type="button" class="btn btn-primary mr-2 " data-toggle="modal" data-target="#signupModal">
 				Signup
 			</button>
+			<a href="http://127.0.0.1:8000/admin/login/?next=/admin/ "  class="btn btn-primary"> Staff Login</a>
 			{% endif %}
 	  
 			<div class="collapse navbar-collapse" id="ftco-nav">
@@ -146,7 +148,7 @@
 
 	<!-- signup Modal -->
 		<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModal" aria-hidden="true">
-		<div class="modal-dialog">
+		<div class="modal-dialog modal-dialog-scrollable">
 			<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="signupModaltitle"><b>SignUp for an Account!</b></h5>
@@ -158,34 +160,39 @@
 				<form action="/signup/" method="POST">
 					{% csrf_token %}
 					<div class="form-group">
-						<label for="username">Username</label>
+						<label for="username" style="color: black;"><b>Username</b></label>
 						<input type="text" class="form-control" id="username" name="username"  placeholder="Enter a Username">
 						<small id="username" class="form-text text-muted">Your unique username must be less than 10 characters (only lowecase letters, numbers & underscores allowed) with no spaces</small>
 					</div>
 					<div class="form-group">
-						<label for="fname">First Name</label>
+						<label for="fname" style="color: black;"><b>First Name</b></label>
 						<input type="text" class="form-control" id="fname" name="fname" placeholder="Enter your First Name" required>
 					</div>
 					<div class="form-group">
-						<label for="lname">Last Name</label>
+						<label for="lname" style="color: black;"><b>Last Name</b></label>
 						<input type="text" class="form-control" id="lname" name="lname" placeholder="Enter your Last Name" required>
 					</div>
 					<div class="form-group">
-						<label for="email">Your Email</label>
+						<label for="email" style="color: black;"><b>Your Email</b></label>
 						<input type="email" class="form-control" id="email"name="email" placeholder="Enter your Email" required>
 					</div>
+					
 					<div class="form-group">
-						<label for="pass1">Choose a Password</label>
+						<label for="pass1" style="color: black;"><b>Choose a Password</b></label>
 						<input type="password" class="form-control" id="pass1" name="pass1" placeholder="Choose your Password" required>
 					</div>
+					
 					<div class="form-group">
-						<label for="pass2">Confirm your Password</label>
+						<label for="pass2" style="color: black;"><b>Confirm your Password</b></label>
 						<input type="password" class="form-control" id="pass2" name="pass2" placeholder="Retype your Password" required>
 					</div>
 					<div class="g-recaptcha" data-sitekey="6LdunscZAAAAAFzgmuIZ7u7Q_nNOvgA18DYCs4fP"></div>
 					<br>
 					{% csrf_token %}
 					<button type="Submit" class="btn btn-primary">Submit</button>
+					<br>
+					<br>
+					<span style="color:black">Already have an account ? </span><a data-dismiss="modal" data-toggle="modal" data-target="#loginModal" style="color:red;" ><b><u>login</u></b></a></li>
 			
 				</form>
 			</div>
@@ -194,7 +201,9 @@
 			</div>
 			</div>
 		</div>
+		
 		</div>
+		
 
 	<!-- Login Modal -->
 	<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
@@ -203,8 +212,8 @@
 			<div class="modal-header">
 				<h5 class="modal-title" id="loginModaltitle"><b>Login using your Credentials!</b></h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-				</button>
+					<span aria-hidden="true">&times;</span>
+					</button>
 			</div>
 			<div class="modal-body">
 				<form action="/login/" method="POST">
@@ -217,10 +226,11 @@
 						<label for="pass">Choose a Password</label>
 						<input type="password" class="form-control" id="loginpassword" name="loginpassword" placeholder="Enter your Password" required>
 					</div>
-					<div class="g-recaptcha" data-sitekey="6LdunscZAAAAAFzgmuIZ7u7Q_nNOvgA18DYCs4fP"></div>
-					<br>
-					{% csrf_token %}
+					
 					<button type="submit" class="btn btn-primary">Submit</button>
+					<br>
+					<br>
+					<span style="color:black">Don't have an account ? </span><a data-dismiss="modal" data-toggle="modal" data-target="#signupModal" style="color:red;" ><b><u>Sign up</u></b></a></li>
 				</form>
 			</div>
 			

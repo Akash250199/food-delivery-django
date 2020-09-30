@@ -178,28 +178,10 @@ def handlelogin(request):
 
         user=authenticate(username=loginusername,password=loginpassword)
 
-        if user is not None:
-            clientkey=request.POST['g-recaptcha-response']
-            secretkey='6LdunscZAAAAAJ_PFLDKtmlY-Dnx4V4CuA0IBoDj'
-            capthchaData={
-                'secret': secretkey,
-                'response': clientkey
-            }
-            r= requests.post('https://www.google.com/recaptcha/api/siteverify',data=capthchaData)
-            response=json.loads(r.text)
-            verify= response['success']
-            if verify:
-                login(request,user)
-                subject = 'Successfully Logged In !! LunchBox'
-                message = f'Hi {user.first_name}, Thank you for join with LunchBox.\n\nNow You Can Access our Website. '
-                email_from = settings.EMAIL_HOST_USER 
-                recipient_list = [user.email] 
-                send_mail( subject, message, email_from, recipient_list )
-                messages.success(request,"Successfully Logged In")
-                return redirect('home')
-            else: 
-                messages.error(request,"Invalid Credentials/captcha")
-                return redirect('home')
+        if user is not None:   
+            login(request,user)
+            messages.success(request,"Successfully Logged In")
+            return redirect('home')   
         else:
             messages.error(request,"Invalid Credentials,Try Again")
             return redirect('home')
