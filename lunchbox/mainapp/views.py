@@ -55,6 +55,9 @@ def reservation(request):
             return redirect('reservation')
 
     return render(request,'mainapp/reservation.html')
+def bookings(request):
+    all_bookings=Reservation.objects.all()
+    return render(request,'mainapp/bookings.html',{"Details":all_bookings})
 def blog(request):
     return render(request,'mainapp/blog.html')
 def blogs(request):
