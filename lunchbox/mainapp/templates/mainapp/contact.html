@@ -103,6 +103,51 @@
   </div>
 </section>
 
+
+{% if user.is_staff %}
+
+<section class="ftco-section bg-light">
+  <div class="container">		
+    <div class="row justify-content-center mb-5 pb-2">
+      <div class="col-md-7 text-center heading-section ftco-animate">
+        <span class="subheading">Details</span>
+        <h2 class="mb-4">Our Contact-Section Details</h2>
+      </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col-sm-12 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">					
+      <div class="col-md-12">
+        <table class="table table-bordered table-striped table-hover">
+          <thead class="thead-dark">
+                  <tr>
+                      <th>NAME</th>
+                      <th>EMAIL ID</th>
+                      <th>MOBILE NO.</th>
+                      <th>SUBJECT</th>
+                      <th>MESSAGE</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for msg in Messages %}
+                      <tr>
+                          <td style="color: white;">{{msg.name}}</td>
+                          <td style="color: white;">{{msg.email}}</td>
+                          <td style="color: white;">{{msg.phone}}</td>
+                          <td style="color: white;">{{msg.subject}}</td>
+                          <td style="color: white;">{{msg.desc}}</td>
+                      </tr>
+                  {% endfor%}
+              </tbody>
+          </table>
+      </div>
+      </div>
+    </div>
+    </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
 <section class="ftco-section contact-section bg-light">
   <div class="container">
     <div class="row d-flex contact-info">
@@ -133,6 +178,38 @@
    </div>
  </div>
 </section>
+
+  {% else %}
+  <section class="ftco-section contact-section bg-light">
+    <div class="container">
+      <div class="row d-flex contact-info">
+        <div class="col-md-12">
+          <h2 class="h4 font-weight-bold">Contact Information</h2>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-md-3 d-flex">
+         <div class="dbox">
+           <p><span>Address:</span>Ruby Hospital Area,Anandapur,Kolkata-700107 </p>
+         </div>
+       </div>
+       <div class="col-md-3 d-flex">
+         <div class="dbox">
+           <p><span>Phone:</span> <a href="tel://9876543219">+91-9876543219</a></p>
+         </div>
+       </div>
+       <div class="col-md-3 d-flex">
+         <div class="dbox">
+           <p><span>Email:</span> <a href="mailto:lunch.boxrestora@gmail.com">lunch.boxrestora@gmail.com</a></p>
+         </div>
+       </div>
+       <div class="col-md-3 d-flex">
+         <div class="dbox">
+           <p><span>Website:</span> <a href="{% url 'home' %}">LunchBox.com</a></p>
+         </div>
+       </div>
+     </div>
+   </div>
+  </section>
 <section class="ftco-section ftco-no-pt contact-section">
  <div class="container">
   <div class="row d-flex align-items-stretch no-gutters">
@@ -162,7 +239,6 @@
       </div>
       <div class="g-recaptcha" data-sitekey="6LdunscZAAAAAFzgmuIZ7u7Q_nNOvgA18DYCs4fP"></div>
 			<br>
-			{% csrf_token %}
       <button type="Submit" class="btn btn-primary">Send Message</button>
     </form>
   </div>
@@ -172,6 +248,7 @@
 </div>
 </div>
 </section>
+{% endif %}
 
 <footer class="ftco-footer ftco-no-pb ftco-section">
   <div class="container">

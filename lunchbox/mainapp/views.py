@@ -107,8 +107,8 @@ def contact(request):
         else:
             messages.error(request,"Error sending message, Invalid Credentials/captcha")
             return redirect('contactus') 
-
-    return render(request, 'mainapp/contact.html')
+    all_messages=Contact.objects.all()
+    return render(request, 'mainapp/contact.html',{"Messages":all_messages})
 
 def developer(request):
     return render(request,'mainapp/developer.html')

@@ -104,46 +104,37 @@
 	<section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt">
 		<div class="container">
 			<div class="row no-gutters">
-				<div class="col-sm-12 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
-					<form class="appointment-form" >
-							<div class="row justify-content-center">
-								<div class="row">
-                                    <div class="col-md-12">
-                                        <table class="table table-bordered table-striped table-hover">
-                                            <thead class="thead-dark">
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Email Id</th>
-                                                    <th>Contact Number</th>
-                                                    <th>Date</th>
-                                                    <th>Time</th>
-                                                    <th>Guest</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {% for data in Details %}
-                                                    <tr>
-                                                        <td>{{data.name}}</td>
-                                                        <td>{{data.email}}</td>
-                                                        <td>{{data.phone}}</td>
-                                                        <td>{{data.date}}</td>
-                                                        <td>{{data.time}}</td>
-                                                        <td>{{data.guest}}</td>
-                                                    </tr>
-                                                {% endfor%}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-							</div>
-								
-					</form>
+				<div class="col-sm-12 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">					
+				<div class="col-md-12">
+					<table class="table table-bordered table-striped table-hover">
+						<thead class="thead-dark">
+							<tr>
+								<th>NAME</th>
+								<th>EMAIL ID</th>
+								<th>MOBILE NO.</th>
+								<th>DATE</th>
+								<th>TIME</th>
+								<th>NO OF GUEST</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for data in Details %}
+								<tr>
+									<td style="color: white;">{{data.name}}</td>
+									<td style="color: white;">{{data.email}}</td>
+									<td style="color: white;">{{data.phone}}</td>
+									<td style="color: white;">{{data.date}}</td>
+									<td style="color: white;">{{data.time}}</td>
+									<td style="color: white;">{{data.guest}}</td>
+								</tr>
+							{% endfor%}
+						</tbody>
+					</table>
 				</div>
-			</div>
-		</div>
+                </div>
+            </div>
+		</div>			
 	</section>
-
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row d-flex">
