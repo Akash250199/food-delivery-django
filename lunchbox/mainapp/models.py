@@ -25,6 +25,7 @@ class Reservation(models.Model):
         return 'Booking from: ' + self.name
 
 class Blog(models.Model):
+    
     img=models.ImageField(upload_to='images')
     date=models.DateField()
     uploadby=models.CharField(max_length=100) 
@@ -32,4 +33,58 @@ class Blog(models.Model):
     
     def __str__(self):
         return 'Blogs: ' + self.subject
+
+class Breakfast_Menu(models.Model):
+    item=models.CharField(max_length=100)
+    ingredient=models.CharField(max_length=100)
+    price=models.PositiveIntegerField()
+    img=models.ImageField(upload_to='images')
+
+    def __str__(self):
+        return 'Breakfast_Menu: ' + self.item
+        
+class Lunch_Menu(models.Model):
+    item=models.CharField(max_length=100)
+    ingredient=models.CharField(max_length=100)
+    price=models.PositiveIntegerField()
+    img=models.ImageField(upload_to='images')
+
+    def __str__(self):
+        return 'Lunch_Menu: ' + self.item
+
+class Dinner_Menu(models.Model):
+    item=models.CharField(max_length=100)
+    ingredient=models.CharField(max_length=100)
+    price=models.PositiveIntegerField()
+    img=models.ImageField(upload_to='images')
+
+    def __str__(self):
+        return 'Dinner_Menu: ' + self.item
+
+class Dessert_Menu(models.Model):
+    item=models.CharField(max_length=100)
+    ingredient=models.CharField(max_length=100)
+    price=models.PositiveIntegerField()
+    img=models.ImageField(upload_to='images')
+
+    def __str__(self):
+        return 'Dessert_Menu: ' + self.item
+
+class Wine_Menu(models.Model):
+    item=models.CharField(max_length=100)
+    ingredient=models.CharField(max_length=100)
+    price=models.PositiveIntegerField()
+    img=models.ImageField(upload_to='images')
+
+    def __str__(self):
+        return 'Wine_Menu: ' + self.item
+
+class Drink_Menu(models.Model):
+    item=models.CharField(max_length=100)
+    ingredient=models.CharField(max_length=100)
+    price=models.PositiveIntegerField()
+    img=models.ImageField(upload_to='images')
+
+    def __str__(self):
+        return 'Drink_Menu: ' + self.item
 

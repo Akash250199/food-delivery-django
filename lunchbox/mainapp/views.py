@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
-from mainapp.models import Contact,Reservation,Blog
+from mainapp.models import Contact,Reservation,Blog,Breakfast_Menu,Lunch_Menu,Dinner_Menu,Dessert_Menu,Wine_Menu,Drink_Menu
 import requests
 import json
 
@@ -20,7 +20,16 @@ def about(request):
 def chef(request):
     return render(request,'mainapp/chef.html')
 def menu(request):
-    return render(request,'mainapp/menu.html')
+    all_breakfast_menu=Breakfast_Menu.objects.all()
+    all_lunch_menu=Lunch_Menu.objects.all()
+    all_dinner_menu=Dinner_Menu.objects.all()
+    all_dessert_menu=Dessert_Menu.objects.all()
+    all_wine_menu=Wine_Menu.objects.all()
+    all_drink_menu=Drink_Menu.objects.all()
+    return render(request,'mainapp/menu.html',
+                                            {"breakfast_Menus":all_breakfast_menu,"lunch_Menus":all_lunch_menu,
+                                            "dinner_Menus":all_dinner_menu,"dessert_Menus":all_dessert_menu,
+                                            "wine_Menus":all_wine_menu,"drink_Menus":all_drink_menu})
 def reservation(request):
     if request.method=='POST':
         name=request.POST['name']

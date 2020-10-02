@@ -135,5 +135,8 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'lunch.boxrestora@gmail.com'
 EMAIL_HOST_PASSWORD ='lunchbox250199'
 
-MEDIA_URL='/images/'
-MEDIA_ROOT= os.path.join(BASE_DIR,'images')
+MEDIA_URL='/media/'
+MEDIA_ROOT= os.path.join(BASE_DIR,'media')
+
+
+
