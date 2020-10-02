@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 from django.contrib.messages import constants as messages
+import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -134,3 +135,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'lunch.boxrestora@gmail.com'
 EMAIL_HOST_PASSWORD ='lunchbox250199'
 
+MEDIA_URL='/images/'
+MEDIA_ROOT= os.path.join(BASE_DIR,'images')

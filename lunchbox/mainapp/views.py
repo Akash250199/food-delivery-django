@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
-from mainapp.models import Contact,Reservation
+from mainapp.models import Contact,Reservation,Blog
 import requests
 import json
 
@@ -59,7 +59,8 @@ def bookings(request):
     all_bookings=Reservation.objects.all()
     return render(request,'mainapp/bookings.html',{"Details":all_bookings})
 def blog(request):
-    return render(request,'mainapp/blog.html')
+    all_blog=Blog.objects.all()
+    return render(request,'mainapp/blog.html',{"Blogs":all_blog})
 def blogs(request):
     return render(request,'mainapp/blog-single.html')
 def contact(request):

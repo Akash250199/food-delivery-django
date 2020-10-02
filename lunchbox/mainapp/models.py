@@ -22,5 +22,14 @@ class Reservation(models.Model):
     guest=models.PositiveIntegerField()
 
     def __str__(self):
-        return 'Message from: ' + self.name
+        return 'Booking from: ' + self.name
+
+class Blog(models.Model):
+    img=models.ImageField(upload_to='images')
+    date=models.DateField()
+    uploadby=models.CharField(max_length=100) 
+    subject=models.TextField()
+    
+    def __str__(self):
+        return 'Blogs: ' + self.subject
 
