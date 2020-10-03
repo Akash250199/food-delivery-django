@@ -16,5 +16,6 @@ urlpatterns = [
     path('developer/',views.developer,name='developedby'),
     path('signup/',views.handlesignup,name='signup'),
     path('login/',views.handlelogin,name='login'),
+    path('adminlogin/',views.handleadminlogin,name='adminlogin'),
     path('logout/',views.handlelogout,name='logout'),
 ]

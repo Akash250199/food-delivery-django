@@ -191,16 +191,45 @@ def handlelogin(request):
 
         user=authenticate(username=loginusername,password=loginpassword)
 
-        if user is not None:   
-            login(request,user)
-            messages.success(request,"Successfully Logged In")
-            return redirect('home')   
+        if user is not None:
+            if user!=user.is_staff:   
+                login(request,user)
+                messages.success(request,"Successfully Logged In")
+                return redirect('home')   
+            else:
+                messages.error(request,"This is not for Restaurant User")
+                return redirect('home')
         else:
             messages.error(request,"Invalid Credentials,Try Again")
             return redirect('home')
 
     else:
         return HttpResponse('404-not found')
+
+def handleadminlogin(request):
+    if request.method=='POST':
+        loginusername=request.POST['loginusername']
+        loginpassword=request.POST['loginpassword']
+
+        user=authenticate(username=loginusername,password=loginpassword)
+
+        if user is not None:
+            if loginusername==loginpassword and user.is_staff: 
+                login(request,user)
+                messages.success(request,"Successfully Logged In")
+                return redirect('home')
+            else:
+                messages.error(request,"This is not for Normal User ")
+                return redirect('home')
+
+        else:
+            messages.error(request,"Invalid Credentials,Try Again")
+            return redirect('home')
+
+    else:
+        return HttpResponse('404-not found')
+
+
 
 def handlelogout(request):
     logout(request)
