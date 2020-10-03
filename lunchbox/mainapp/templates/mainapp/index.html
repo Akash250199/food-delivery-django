@@ -380,50 +380,22 @@
 						<div class="heading-menu text-center ftco-animate">
 							<h3>Breakfast</h3>
 						</div>
+						{% for breakfast in Some_breakfast_Menus %}
 						<div class="menus d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/breakfast-1.jpg);"></div>
+							<div class="menu-img img" style="background-image: url({{breakfast.img.url}});"></div>
 							<div class="text">
 								<div class="d-flex">
 									<div class="one-half">
-										<h3>Italian Noodles</h3>
+										<h3>{{breakfast.item}}</h3>
 									</div>
 									<div class="one-forth">
-										<span class="price">RS.250</span>
+										<span class="price">RS.{{breakfast.price}}</span>
 									</div>
 								</div>
-								<p><span>Meat</span>, <span>Noodles</span>, <span>vegtables</span>, <span>soup</span></p>
+								<p><span>{{breakfast.ingredient}}</span></p>
 							</div>
 						</div>
-						<div class="menus d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/breakfast-2.jpg);"></div>
-							<div class="text">
-								<div class="d-flex">
-									<div class="one-half">
-										<h3>Salad</h3>
-									</div>
-									<div class="one-forth">
-										<span class="price">RS.250</span>
-									</div>
-								</div>
-								<p><span>green origano</span>, <span>carrots</span>, <span>spinach</span>, <span>Tomatoe</span></p>
-							</div>
-						</div>
-						<div class="menus border-bottom-0 d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/breakfast-3.jpg);"></div>
-							<div class="text">
-								<div class="d-flex">
-									<div class="one-half">
-										<h3>Egg Soup</h3>
-									</div>
-									<div class="one-forth">
-										<span class="price">RS.300</span>
-									</div>
-								</div>
-								<p><span>egg</span>, <span>vegtables</span>, <span>seasoning</span></p>
-							</div>
-						</div>
-						<span class="flat flaticon-bread" style="left: 0;"></span>
-						<span class="flat flaticon-breakfast" style="right: 0;"></span>
+						{% endfor %}
 					</div>
 				</div>
 
@@ -432,50 +404,22 @@
 						<div class="heading-menu text-center ftco-animate">
 							<h3>Lunch</h3>
 						</div>
+						{% for lunch in Some_lunch_Menus %}
 						<div class="menus d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/lunch-1.jpg);"></div>
+							<div class="menu-img img" style="background-image: url({{lunch.img.url}});"></div>
 							<div class="text">
 								<div class="d-flex">
 									<div class="one-half">
-										<h3>Italian bread</h3>
+										<h3>{{lunch.item}}</h3>
 									</div>
 									<div class="one-forth">
-										<span class="price">RS.150</span>
+										<span class="price">RS.{{lunch.price}}</span>
 									</div>
 								</div>
-								<p><span>bread</span>, <span>cream</span>, <span>cheese</span>, <span>seasoning</span></p>
+								<p><span>{{lunch.ingredient}}</span></p>
 							</div>
 						</div>
-						<div class="menus d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/lunch-2.jpg);"></div>
-							<div class="text">
-								<div class="d-flex">
-									<div class="one-half">
-										<h3>Mixed meat</h3>
-									</div>
-									<div class="one-forth">
-										<span class="price">RS.600</span>
-									</div>
-								</div>
-								<p><span>Meat</span>, <span>seasoning</span>, <span>salsa sauce</span>, <span>Tomatoe</span></p>
-							</div>
-						</div>
-						<div class="menus border-bottom-0 d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/lunch-3.jpg);"></div>
-							<div class="text">
-								<div class="d-flex">
-									<div class="one-half">
-										<h3>Roasted pork</h3>
-									</div>
-									<div class="one-forth">
-										<span class="price">RS.650</span>
-									</div>
-								</div>
-								<p><span>Meat</span>, <span>seasoning</span>, <span>sauce</span>s</p>
-							</div>
-						</div>
-						<span class="flat flaticon-pizza" style="left: 0;"></span>
-						<span class="flat flaticon-chicken" style="right: 0;"></span>
+						{% endfor %}	
 					</div>
 				</div>
 
@@ -484,50 +428,22 @@
 						<div class="heading-menu text-center ftco-animate">
 							<h3>Dinner</h3>
 						</div>
+						{% for dinner in Some_dinner_Menus %}
 						<div class="menus d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/dinner-1.jpg);"></div>
+							<div class="menu-img img" style="background-image: url({{dinner.img.url}});"></div>
 							<div class="text">
 								<div class="d-flex">
 									<div class="one-half">
-										<h3>Varied meat</h3>
+										<h3>{{dinner.item}}</h3>
 									</div>
 									<div class="one-forth">
-										<span class="price">RS.500</span>
+										<span class="price">RS.{{dinner.price}}</span>
 									</div>
 								</div>
-								<p><span>porkmeat</span>, <span>chicken</span>, <span>lamb</span>, <span>salad</span></p>
+								<p><span>{{dinner.ingredient}}</span></p>
 							</div>
 						</div>
-						<div class="menus d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/dinner-2.jpg);"></div>
-							<div class="text">
-								<div class="d-flex">
-									<div class="one-half">
-										<h3>Sweet salad</h3>
-									</div>
-									<div class="one-forth">
-										<span class="price">RS.150</span>
-									</div>
-								</div>
-								<p><span>cucumber</span>, <span>onion</span>, <span>leafy vegtables</span>, <span>Tomatoe</span></p>
-							</div>
-						</div>
-						<div class="menus border-bottom-0 d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/dinner-3.jpg);"></div>
-							<div class="text">
-								<div class="d-flex">
-									<div class="one-half">
-										<h3>Western thali</h3>
-									</div>
-									<div class="one-forth">
-										<span class="price">RS.500</span>
-									</div>
-								</div>
-								<p><span>vegtables</span>, <span>Rice</span>, <span>salad</span></p>
-							</div>
-						</div>
-						<span class="flat flaticon-omelette" style="left: 0;"></span>
-						<span class="flat flaticon-burger" style="right: 0;"></span>
+						{% endfor %}	
 					</div>
 				</div>
 
@@ -537,50 +453,22 @@
 						<div class="heading-menu text-center ftco-animate">
 							<h3>Desserts</h3>
 						</div>
+						{% for dessert in Some_dessert_Menus %}
 						<div class="menus d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/dessert-1.jpg);"></div>
+							<div class="menu-img img" style="background-image: url({{dessert.img.url}});"></div>
 							<div class="text">
 								<div class="d-flex">
 									<div class="one-half">
-										<h3>Sweet gormounto</h3>
+										<h3>{{dessert.item}}</h3>
 									</div>
 									<div class="one-forth">
-										<span class="price">RS.200</span>
+										<span class="price">RS.{{dessert.price}}</span>
 									</div>
 								</div>
-								<p><span>gormount</span>, <span>sauce</span>, <span>toppings</span></p>
+								<p><span>{{dessert.ingredient}}</span></p>
 							</div>
 						</div>
-						<div class="menus d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/dessert-2.jpg);"></div>
-							<div class="text">
-								<div class="d-flex">
-									<div class="one-half">
-										<h3>Icecream</h3>
-									</div>
-									<div class="one-forth">
-										<span class="price">RS.250</span>
-									</div>
-								</div>
-								<p><span>chocolate</span>, <span>vanilla</span>, <span>strawberry</span>, <span>cranberry</span></p>
-							</div>
-						</div>
-						<div class="menus border-bottom-0 d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/dessert-3.jpg);"></div>
-							<div class="text">
-								<div class="d-flex">
-									<div class="one-half">
-										<h3>Choco cake</h3>
-									</div>
-									<div class="one-forth">
-										<span class="price">RS.350</span>
-									</div>
-								</div>
-									<p><span>cake</span>, <span>chocolate</span>,  <span>toppings</span></p>
-							</div>
-						</div>
-						<span class="flat flaticon-cupcake" style="left: 0;"></span>
-						<span class="flat flaticon-ice-cream" style="right: 0;"></span>
+						{% endfor %}
 					</div>
 				</div>
 				
@@ -589,50 +477,22 @@
 						<div class="heading-menu text-center ftco-animate">
 							<h3>Wine Card</h3>
 						</div>
+						{% for wine in Some_wine_Menus %}
 						<div class="menus d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/wine-1.jpg);"></div>
+							<div class="menu-img img" style="background-image: url({{wine.img.url}});"></div>
 							<div class="text">
 								<div class="d-flex">
 									<div class="one-half">
-										<h3>Turkish wine</h3>
+										<h3>{{wine.item}}</h3>
 									</div>
 									<div class="one-forth">
-										<span class="price">RS.750</span>
+										<span class="price">RS.{{wine.price}}</span>
 									</div>
 								</div>
-								<p><span>wine</span>, <span>nuts</span>, <span>cashews</span>, <span>lemon</span></p>
+								<p><span>{{wine.ingredient}}</span></p>
 							</div>
 						</div>
-						<div class="menus d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/wine-2.jpg);"></div>
-							<div class="text">
-								<div class="d-flex">
-									<div class="one-half">
-										<h3>Swedish collection</h3>
-									</div>
-									<div class="one-forth">
-										<span class="price">RS.1250</span>
-									</div>
-								</div>
-							<p><span>wine</span>, <span>beer</span>, <span>rum</span>, <span>nuts</span></p>
-							</div>
-						</div>
-						<div class="menus border-bottom-0 d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/wine-3.jpg);"></div>
-							<div class="text">
-								<div class="d-flex">
-									<div class="one-half">
-										<h3>Cranberry</h3>
-									</div>
-									<div class="one-forth">
-										<span class="price">RS.250</span>
-									</div>
-								</div>
-								<p><span>cranberry</span>, <span>salad</span>, <span>toppings</span>, <span>nuts</span></p>
-							</div>
-						</div>
-						<span class="flat flaticon-wine" style="left: 0;"></span>
-						<span class="flat flaticon-wine-1" style="right: 0;"></span>
+						{% endfor %}
 					</div>
 				</div>
 
@@ -641,50 +501,22 @@
 						<div class="heading-menu text-center ftco-animate">
 							<h3>Drinks &amp; Tea</h3>
 						</div>
+						{% for drink in Some_drink_Menus %}
 						<div class="menus d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/drink-1.jpg);"></div>
+							<div class="menu-img img" style="background-image: url({{drink.img.url}});"></div>
 							<div class="text">
 								<div class="d-flex">
 									<div class="one-half">
-										<h3>Orange juice</h3>
+										<h3>{{drink.item}}</h3>
 									</div>
 									<div class="one-forth">
-										<span class="price">RS.150</span>
+										<span class="price">RS.{{drink.price}}</span>
 									</div>
 								</div>
-								<p><span>orange</span>, <span>salt peppper</span></p>
+								<p><span>{{drink.ingredient}}</span></p>
 							</div>
 						</div>
-						<div class="menus d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/drink-2.jpg);"></div>
-							<div class="text">
-								<div class="d-flex">
-									<div class="one-half">
-										<h3>Blue lagoon</h3>
-									</div>
-									<div class="one-forth">
-										<span class="price">RS.550</span>
-									</div>
-								</div>
-								<p><span>lemon</span>, <span>salt peppper</span>, <span>seasoning</span></p>
-							</div>
-						</div>
-						<div class="menus border-bottom-0 d-flex ftco-animate">
-							<div class="menu-img img" style="background-image: url(static/mainapp/images/drink-3.jpg);"></div>
-							<div class="text">
-								<div class="d-flex">
-									<div class="one-half">
-										<h3>Lemon squadra Special</h3>
-									</div>
-									<div class="one-forth">
-										<span class="price">RS.440</span>
-									</div>
-								</div>
-								<p><span>lemon</span>, <span>seasoning</span>, <span>pepper</span></p>
-							</div>
-						</div>
-						<span class="flat flaticon-wine" style="left: 0;"></span>
-						<span class="flat flaticon-wine-1" style="right: 0;"></span>
+						{% endfor %}
 					</div>
 				</div>
 			</div>
@@ -876,64 +708,21 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4 ftco-animate">
-					<div class="blog-entry">
-						<a class="block-20" style="background-image: url('static/mainapp/images/image_1.jpg');"></a>
-
-						<div class="text px-4 pt-3 pb-4">
-							<div class="meta">
-								<div>July 31, 2020</div>
-								<div>Admin</div>
-							</div>
-							<h3 class="heading">Even the all-powerful Pointing has no control about the blind texts</h3>
-							<p class="clearfix">
-								<a class="float-right meta-chat"><span class="fa fa-comment"></span> 3</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 ftco-animate">
-					<div class="blog-entry">
-			
-						<a class="block-20" style="background-image: url('static/mainapp/images/image_5.jpg');">
-						</a>
-						
-
-						<div class="text px-4 pt-3 pb-4">
-							<div class="meta">
-								<div>July 17, 2020</div>
-								<div>Admin</div>
-							</div>
-							<h3 class="heading">Friends & Wine....Beauty</h3>
-							<p class="clearfix">
-								<br>
-								<br>
-								<a class="float-right meta-chat"><span class="fa fa-comment"></span> 3</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 ftco-animate">
-					<div class="blog-entry">
-						
-						<a class="block-20" style="background-image: url('static/mainapp/images/image_3.jpg');">
-						</a>
-						
-
-						<div class="text px-4 pt-3 pb-4">
-							<div class="meta">
-								<div>June 26, 2020</div>
-								<div>Admin</div>
-							</div>
-							<h3 class="heading">Avez-vous fait votre choix ?</h3>
-							<p class="clearfix">
-								<br>
-								<br>
-								<a class="float-right meta-chat"><span class="fa fa-comment"></span> 3</a>
-							</p>
-						</div>
-					</div>
-				</div>
+				{% for blg in Some_blogs %}
+    			<div class="col-md-4 ftco-animate">
+      				<div class="blog-entry">
+        				<a class="block-20" style="background-image: url({{blg.img.url}})";></a>
+        				<div class="text px-4 pt-3 pb-4">
+          				<div class="meta">
+            				<div>{{blg.date}}</div>
+							<div>{{blg.uploadby}}</div>
+          				</div>
+						<h3 class="heading">{{blg.subject}}</h3>  
+          				<p class="clearfix"><a class="float-right meta-chat"style="color: red;"><span class="fa fa-comment" style="color: red;"></span> 3</a></p>  
+        				</div> 
+      				</div>  
+    			</div>
+    			{% endfor %}
 				<div class="container py-5">
 					<div class="row py-2">
 						<div class="col-md-12 text-center">	

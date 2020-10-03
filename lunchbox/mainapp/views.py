@@ -14,7 +14,54 @@ from django.core.mail import send_mail
 # Create your views here.
 
 def index(request):
-    return render(request, 'mainapp/index.html')
+    # Breakfast Object
+    item1=Breakfast_Menu.objects.get(item ="Italian Noodles")
+    item2=Breakfast_Menu.objects.get(item ="Chole Bhature")
+    item3=Breakfast_Menu.objects.get(item ="Egg Soup") 
+    some_breakfast=[item1,item2,item3]
+
+    # Lunch Object
+    item1=Lunch_Menu.objects.get(item ="Baked Italian Bread")
+    item2=Lunch_Menu.objects.get(item ="Roasted Mixed Meat")
+    item3=Lunch_Menu.objects.get(item ="Roasted Pork") 
+    some_lunch=[item1,item2,item3]
+
+    # Dinner Object
+    item1=Dinner_Menu.objects.get(item ="Murgh Biryani")
+    item2=Dinner_Menu.objects.get(item ="Sweet Salad")
+    item3=Dinner_Menu.objects.get(item ="Mexican Pizza") 
+    some_dinner=[item1,item2,item3]
+
+    # Dessert Object
+    item1=Dessert_Menu.objects.get(item ="Ice Cream" )
+    item2=Dessert_Menu.objects.get(item ="Choco Cake")
+    item3=Dessert_Menu.objects.get(item ="Swedish Ice Cream") 
+    some_dessert=[item1,item2,item3]
+
+    # Wine Object
+    item1=Wine_Menu.objects.get(item ="Turkish Wine")
+    item2=Wine_Menu.objects.get(item ="Cranberry")
+    item3=Wine_Menu.objects.get(item ="Blue Velvet") 
+    some_wine=[item1,item2,item3]
+
+    # Drink object
+    item1=Drink_Menu.objects.get(item ="Orange Juice")
+    item2=Drink_Menu.objects.get(item ="Orange Velvet")
+    item3=Drink_Menu.objects.get(item ="Lemon Squadr") 
+    some_drink=[item1,item2,item3]
+
+    # Blog Object
+    item1=Blog.objects.get(date="2020-08-13")
+    item2=Blog.objects.get(date="2020-07-31")
+    item3=Blog.objects.get(date="2020-09-10") 
+    some_blog=[item1,item2,item3]
+
+
+    return render(request, 'mainapp/index.html',
+                                                {"Some_breakfast_Menus":some_breakfast,"Some_lunch_Menus":some_lunch,
+                                                "Some_dinner_Menus":some_dinner,"Some_dessert_Menus":some_dessert,
+                                                "Some_wine_Menus":some_wine,"Some_drink_Menus":some_drink,
+                                                "Some_blogs":some_blog})
 def about(request):
     return render(request,'mainapp/about.html')
 def chef(request):
@@ -33,7 +80,7 @@ def menu(request):
 def reservation(request):
     if request.method=='POST':
         name=request.POST['name']
-        email=request.POST['email']
+        email=request.POST['email'].lower()   # if the user enter upper case email then lower() automatically turned into in lower case
         phone=request.POST['phone']
         date=request.POST['date']
         time=request.POST['time']
@@ -43,15 +90,15 @@ def reservation(request):
         if len(name)<3 or len(email)<3 or len(phone)<10 or len(guest)<1:
             messages.error(request,"Make sure the information is complete and valid!")
             return redirect('reservation')
-
+        
         if any(not name.isalpha() and not name.isspace() for name in name): 
             messages.error(request,"Please type Valid Name!")
             return redirect('reservation')
+
         if not phone.isdigit():
             messages.error(request,"Please type Phone Number!")
             return redirect('reservation')
         else:
-
             reservation=Reservation(name=name,email=email,phone=phone,date=date,time=time,guest=guest)
             reservation.save()
             subject = 'Booking Confirmed !! LunchBox'
@@ -75,7 +122,7 @@ def blogs(request):
 def contact(request):
     if request.method=='POST':
         name=request.POST['name']
-        email=request.POST['email']
+        email=request.POST['email'].lower()
         phone=request.POST['phone']
         subject=request.POST['subject']
         desc=request.POST['desc']
@@ -127,7 +174,7 @@ def handlesignup(request):
         username=request.POST['username']
         fname=request.POST['fname']
         lname=request.POST['lname']
-        email=request.POST['email']
+        email=request.POST['email'].lower()    
         pass1=request.POST['pass1']
         pass2=request.POST['pass2']
 
@@ -192,7 +239,7 @@ def handlelogin(request):
         user=authenticate(username=loginusername,password=loginpassword)
 
         if user is not None:
-            if user!=user.is_staff:   
+            if not user.is_staff:   
                 login(request,user)
                 messages.success(request,"Successfully Logged In")
                 return redirect('home')   
@@ -214,7 +261,7 @@ def handleadminlogin(request):
         user=authenticate(username=loginusername,password=loginpassword)
 
         if user is not None:
-            if loginusername==loginpassword and user.is_staff: 
+            if user.is_staff: 
                 login(request,user)
                 messages.success(request,"Successfully Logged In")
                 return redirect('home')
