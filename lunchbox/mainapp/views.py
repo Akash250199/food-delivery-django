@@ -6,7 +6,7 @@ from django.contrib import messages
 from mainapp.models import Contact,Reservation,Blog,Breakfast_Menu,Lunch_Menu,Dinner_Menu,Dessert_Menu,Wine_Menu,Drink_Menu
 import requests
 import json
-
+import secrets
 from django.conf import settings 
 from django.core.mail import send_mail
 
@@ -178,6 +178,15 @@ def handlesignup(request):
         pass1=request.POST['pass1']
         pass2=request.POST['pass2']
 
+        secretsgen=secrets.SystemRandom()
+        opt=secretsgen.randrange(100000,999999)
+        subject = 'Otp for signup !! LunchBox'
+        message = f'Hi {fname}  Your Otp is {opt} .\n\nThank you for Choosing Us. '
+        email_from = settings.EMAIL_HOST_USER 
+        recipient_list = [email] 
+        
+        send_mail( subject, message, email_from, recipient_list )
+
         if len(username)>10:
             messages.error(request,"username mustbe under 10 characters")
             return redirect('home')
@@ -189,6 +198,7 @@ def handlesignup(request):
         if not username.isalnum():
             messages.error(request,"username should only contains letter & number")
             return redirect('home')
+        
 
         if pass1==pass2:
             if User.objects.filter(username=username).exists():

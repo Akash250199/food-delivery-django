@@ -166,29 +166,37 @@
 					</div>
 					<div class="form-group">
 						<label for="fname" style="color: black;"><b>First Name</b></label>
-						<input type="text" class="form-control" id="fname" name="fname" placeholder="Enter your First Name" required>
+						<input type="text" class="form-control" id="fname" name="fname" placeholder="Enter your First Name">
 					</div>
 					<div class="form-group">
 						<label for="lname" style="color: black;"><b>Last Name</b></label>
-						<input type="text" class="form-control" id="lname" name="lname" placeholder="Enter your Last Name" required>
+						<input type="text" class="form-control" id="lname" name="lname" placeholder="Enter your Last Name">
 					</div>
 					<div class="form-group">
 						<label for="email" style="color: black;"><b>Your Email</b></label>
 						<input type="email" class="form-control" id="email"name="email" placeholder="Enter your Email" required>
+						<small id="otpMessage" class="form-text"></small>
+					</div>
+					<div class="form-group">
+						<button class="btn btn-danger btn-sm mt-2" name="otpbtn" id="otpbtn">Send OTP</button>
+			
+					</div>
+					<div class="form-group">
+						<label for="otp" style="color: black;"><b>Your otp</b></label>
+						<input type="text" class="form-control" id="otp" name="otp" placeholder="Enter your otp">
 					</div>
 					
 					<div class="form-group">
 						<label for="pass1" style="color: black;"><b>Choose a Password</b></label>
-						<input type="password" class="form-control" id="pass1" name="pass1" placeholder="Choose your Password" required>
+						<input type="password" class="form-control" id="pass1" name="pass1" placeholder="Choose your Password">
 					</div>
 					
 					<div class="form-group">
 						<label for="pass2" style="color: black;"><b>Confirm your Password</b></label>
-						<input type="password" class="form-control" id="pass2" name="pass2" placeholder="Retype your Password" required>
+						<input type="password" class="form-control" id="pass2" name="pass2" placeholder="Retype your Password">
 					</div>
 					<div class="g-recaptcha" data-sitekey="6LdunscZAAAAAFzgmuIZ7u7Q_nNOvgA18DYCs4fP"></div>
 					<br>
-					{% csrf_token %}
 					<button type="Submit" class="btn btn-primary">Submit</button>
 					<br>
 					<br>
@@ -202,7 +210,10 @@
 			</div>
 		</div>
 		
+		
 		</div>
+		
+		
 		
 
 	<!-- Login Modal -->
@@ -865,6 +876,8 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 		<script src="{% static 'mainapp/js/google-map.js' %}"></script>
 		<script src="{% static 'mainapp/js/main.js' %}"></script>
+	
+		  
 		
 	</body>
 	</html>
