@@ -223,7 +223,7 @@ def handlesignup(request):
                 response=json.loads(r.text)
                 verify= response['success']
                 if verify:
-		    myuser=User.objects.create_user(username=username,email=email,password=pass1,first_name=fname,last_name=lname)
+                    myuser=User.objects.create_user(username=username,email=email,password=pass1,first_name=fname,last_name=lname)
                     #myuser=User.objects.create_user(username=username,email=email,otp=otp,password=pass1,first_name=fname,last_name=lname)
                     myuser.save()
 
