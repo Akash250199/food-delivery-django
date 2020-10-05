@@ -174,7 +174,8 @@ def handlesignup(request):
         username=request.POST['username']
         fname=request.POST['fname']
         lname=request.POST['lname']
-        email=request.POST['email'].lower()    
+        email=request.POST['email'].lower()   
+        otp=request.POST['otp'] 
         pass1=request.POST['pass1']
         pass2=request.POST['pass2']
 
@@ -184,7 +185,6 @@ def handlesignup(request):
         message = f'Hi {fname}  Your Otp is {opt} .\n\nThank you for Choosing Us. '
         email_from = settings.EMAIL_HOST_USER 
         recipient_list = [email] 
-        
         send_mail( subject, message, email_from, recipient_list )
 
         if len(username)>10:
@@ -198,7 +198,11 @@ def handlesignup(request):
         if not username.isalnum():
             messages.error(request,"username should only contains letter & number")
             return redirect('home')
-        
+        if not otp==opt:
+            messages.error(request,"Otp does not Match")
+            return redirect('home')
+
+
 
         if pass1==pass2:
             if User.objects.filter(username=username).exists():
@@ -219,7 +223,7 @@ def handlesignup(request):
                 response=json.loads(r.text)
                 verify= response['success']
                 if verify:
-                    myuser=User.objects.create_user(username=username,email=email,password=pass1,first_name=fname,last_name=lname)
+                    myuser=User.objects.create_user(username=username,email=email,otp=otp,password=pass1,first_name=fname,last_name=lname)
                     myuser.save()
 
                     #email
