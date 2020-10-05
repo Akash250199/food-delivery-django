@@ -161,16 +161,16 @@
 					{% csrf_token %}
 					<div class="form-group">
 						<label for="username" style="color: black;"><b>Username</b></label>
-						<input type="text" class="form-control" id="username" name="username"  placeholder="Enter a Username">
+						<input type="text" class="form-control" id="username" name="username"  placeholder="Enter a Username" required>
 						<small id="username" class="form-text text-muted">Your unique username must be less than 10 characters (only lowecase letters, numbers & underscores allowed) with no spaces</small>
 					</div>
 					<div class="form-group">
 						<label for="fname" style="color: black;"><b>First Name</b></label>
-						<input type="text" class="form-control" id="fname" name="fname" placeholder="Enter your First Name">
+						<input type="text" class="form-control" id="fname" name="fname" placeholder="Enter your First Name" required>
 					</div>
 					<div class="form-group">
 						<label for="lname" style="color: black;"><b>Last Name</b></label>
-						<input type="text" class="form-control" id="lname" name="lname" placeholder="Enter your Last Name">
+						<input type="text" class="form-control" id="lname" name="lname" placeholder="Enter your Last Name" required>
 					</div>
 					<div class="form-group">
 						<label for="email" style="color: black;"><b>Your Email</b></label>
@@ -188,12 +188,12 @@
 					
 					<div class="form-group">
 						<label for="pass1" style="color: black;"><b>Choose a Password</b></label>
-						<input type="password" class="form-control" id="pass1" name="pass1" placeholder="Choose your Password">
+						<input type="password" class="form-control" id="pass1" name="pass1" placeholder="Choose your Password" required>
 					</div>
 					
 					<div class="form-group">
 						<label for="pass2" style="color: black;"><b>Confirm your Password</b></label>
-						<input type="password" class="form-control" id="pass2" name="pass2" placeholder="Retype your Password">
+						<input type="password" class="form-control" id="pass2" name="pass2" placeholder="Retype your Password" required>
 					</div>
 					<div class="g-recaptcha" data-sitekey="6LdunscZAAAAAFzgmuIZ7u7Q_nNOvgA18DYCs4fP"></div>
 					<br>
