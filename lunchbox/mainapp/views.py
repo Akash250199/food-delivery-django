@@ -175,7 +175,7 @@ def handlesignup(request):
         fname=request.POST['fname']
         lname=request.POST['lname']
         email=request.POST['email'].lower()   
-        otp=request.POST['otp'] 
+        #otp=request.POST['otp'] 
         pass1=request.POST['pass1']
         pass2=request.POST['pass2']
 
@@ -223,7 +223,8 @@ def handlesignup(request):
                 response=json.loads(r.text)
                 verify= response['success']
                 if verify:
-                    myuser=User.objects.create_user(username=username,email=email,otp=otp,password=pass1,first_name=fname,last_name=lname)
+		    myuser=User.objects.create_user(username=username,email=email,password=pass1,first_name=fname,last_name=lname)
+                    #myuser=User.objects.create_user(username=username,email=email,otp=otp,password=pass1,first_name=fname,last_name=lname)
                     myuser.save()
 
                     #email
