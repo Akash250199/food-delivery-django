@@ -179,13 +179,13 @@ def handlesignup(request):
         pass1=request.POST['pass1']
         pass2=request.POST['pass2']
 
-        secretsgen=secrets.SystemRandom()
+        """secretsgen=secrets.SystemRandom()
         opt=secretsgen.randrange(100000,999999)
         subject = 'Otp for signup !! LunchBox'
         message = f'Hi {fname}  Your Otp is {opt} .\n\nThank you for Choosing Us. '
         email_from = settings.EMAIL_HOST_USER 
         recipient_list = [email] 
-        send_mail( subject, message, email_from, recipient_list )
+        send_mail( subject, message, email_from, recipient_list )"""
 
         if len(username)>10:
             messages.error(request,"username mustbe under 10 characters")
